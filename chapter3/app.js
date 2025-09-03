@@ -17,6 +17,7 @@ if (user_hand != null){
   alert("またチャレンジしてね")
 }
 
+
 //ランダムでじゃんけんの手を作成する関数
 function getJShand(){
   let js_hand_num = Math.floor( Math.random() * 3 );
