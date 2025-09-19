@@ -2,8 +2,16 @@ const API_KEY = "14e9f0f3ae8034f8d2bad9334ea8d477";
 
 $(function(){
   $('#btn').on('click', function(){
+    const city = $('#cityname').val().trim();
+    if (!city) {
+      alert('都市名を入力してください');
+      return;
+    }
+
     $.ajax({
-      url: "https://api.openweathermap.org/data/2.5/weather?q=" + $('#cityname').val() + "&units=metric&appid=" + API_KEY,
+      url: "https://api.openweathermap.org/data/2.5/weather?q=" 
+            + city 
+            + "&units=metric&appid=" + API_KEY,
       dataType : 'json',
       }).done(function (data){
         //通信成功
